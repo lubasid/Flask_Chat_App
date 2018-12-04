@@ -25,14 +25,14 @@ Contents of Directory:
 	Python 3
 
 
-### Basic setup: (without using virtual enviroment)
+### Basic setup: (without using a virtual enviroment):
 
 	pip install -r requirements.txt
 	python application.py
 
 
 
-### Setup with virtual virtualenv:
+### Setup with virtual enviroment (virtualenv):
 
 	pip install virtualenv			(install virtualenv package)
 	virtualenv -p C:/Python36/python virt 	(set location of python3)
