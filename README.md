@@ -1,18 +1,40 @@
 # Flask_Chat_App
 
+Contents of Directory:
 
-Basic setup:
+	/Databases/
+		flask.db
+		user_model.py
 
-pip install -f requirements.txt
-python application.py
+	/templates/
+		/security/
+			login_user.html
+			register_user.html
+		index.html
+
+	.gitignore
+	application.py
+	License
+	README.md
+	requirements.txt
+
+
+Requirements:
+	Python 3
+
+
+Basic setup: (without using virtual enviroment)
+
+	pip install -r requirements.txt
+	python application.py
 
 
 
 Setup with virtual virtualenv:
 
-pip install virtualenv
-virtualenv -p C:/Python36/python3 virt
-source virt/Scripts/activate
+	pip install virtualenv					(install virtualenv package)
+	virtualenv -p C:/Python36/python virt 	(set location of python3)
+	source virt/Scripts/activate			(activate virtual env)
 
-pip install -f requirements.txt
-python application.py
+	pip install -r requirements.txt 		(install file)
+	python application.py 					(start app)
