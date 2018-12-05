@@ -5,6 +5,7 @@ var socket = io.connect('http://' + document.domain + ':' + location.port);
         socket.on('connect', function() {
             var user = current_user;
             var send_info = ['logged in', user];
+            send_info[1] = encryptMsg(user);
             socket.send(send_info);
         });
 
