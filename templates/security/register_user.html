@@ -29,27 +29,35 @@
 
 body {
 font-family: Arial;
-background-color: #cccccc;
+background-color: #f3f3f3;
 padding: 50px;
 }
-.reg-btn{
-  width: 240;
-
-
+p{
+  text-align: left;
 }
+
+
+.reg-btn {
+  color: #ddd;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
 .login {
 margin: 20px auto;
 width: 350px;
 }
 .login-block {
-background-color: #FFF;
+background-color: #a5a5a5;
 padding: 20px;
 border-radius: 5px
 }
 
+
+
 .app-title {
 text-align: center;
-color: #777;
+color: #d0c8c8;
 }
 
 .login-form {
@@ -60,19 +68,40 @@ text-align: center;
 list-style: none
 
 }
+#submit {
+  width: 100%;
+  padding: 5px;
+  color: #fff;
+  background: none;
+  border: 1px solid #ddd;
+  font-weight: 300;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 5px #000;
+  transition: ease-in 0.2s;
+  margin-top: 2px;
+  cursor: pointer;
+}
+#email{
+  margin-left: 20px;
+}
+#password{
+  margin-left: 50px;
+}
 
 
 input {
-text-align: center;
-background-color: #ECF0F1;
-border: 2px solid transparent;
-border-radius: 3px;
-font-size: 16px;
-font-weight: 200;
-padding: 10px 0;
-width: 250px;
-transition: border .5s;
+  display: inline-block;
+  background: none;
+  border: none;
+  outline: none;
+  color: #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  margin: 0px 0px 12px;
+  padding: 8px;
 }
+
+
 
 input:focus {
 border: 2px solid #3498DB;

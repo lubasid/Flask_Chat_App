@@ -14,7 +14,12 @@
         {{ render_field_with_errors(login_user_form.remember) }}
         {{ render_field(login_user_form.next) }}
         {{ render_field(login_user_form.submit) }}
-        <ul class = "reg-btn"><a href="{{ url_for_security('register') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">{{ _('Register') }}</a><br/></ul>
+        <div class = "question-div">
+          <p class = "question-txt">Not a member?</p>
+          <a class = "reg-btn" href="{{ url_for_security('register') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">{{ _('Register') }}</a>
+          
+        </div>
+        
       </form>
     </div>
   </div>
@@ -25,27 +30,43 @@
 
 body {
 font-family: Arial;
-background-color: #cccccc;
+background-color: #f3f3f3;
 padding: 50px;
 }
-.reg-btn{
-  width: 240;
+p{
+  text-align: left;
+}
 
 
+.question-txt {
+  display: inline-block;
+  color: #ddd;
+  font-size: 12px;
+}
+.question-div {
+  text-align: center;
+}
+
+
+.reg-btn {
+  color: #ddd;
+  margin-left: 5px;
+  font-size: 12px;
 }
 .login {
 margin: 20px auto;
 width: 350px;
 }
 .login-block {
-background-color: #FFF;
+background-color: #a5a5a5;
 padding: 20px;
 border-radius: 5px
 }
 
+
 .app-title {
 text-align: center;
-color: #777;
+color: #d0c8c8;
 }
 
 .login-form {
@@ -57,23 +78,51 @@ list-style: none
 
 }
 
+#submit {
+  width: 100%;
+  padding: 5px;
+  color: #fff;
+  background: none;
+  border: 1px solid #ddd;
+  font-weight: 300;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 5px #000;
+  transition: ease-in 0.2s;
+  margin-top: 2px;
+  cursor: pointer;
+}
+#email{
+  margin-left: 20px;
+}
+#password{
+  margin-left: 50px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
 
 input {
-text-align: center;
-background-color: #ECF0F1;
-border: 2px solid transparent;
-border-radius: 3px;
-font-size: 16px;
-font-weight: 200;
-padding: 10px 0;
-width: 250px;
-transition: border .5s;
+  display: inline-block;
+  background: none;
+  border: none;
+  outline: none;
+  color: #ddd;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  margin: 0px 0px 12px;
+  padding: 8px;
 }
+
+
 
 input:focus {
 border: 2px solid #3498DB;
 box-shadow: none;
 }
+
 
 
 </style>
