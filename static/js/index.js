@@ -9,6 +9,7 @@ var socket = io.connect('http://' + document.domain + ':' + location.port);
         socket.on('connect', function() {
             var user = current_user;
             var send_info = ['logged in', user];
+            send_info[0] = encryptMsg(send_info[0]);
             send_info[1] = encryptMsg(user);
             socket.send(send_info);
         });
@@ -18,9 +19,8 @@ var socket = io.connect('http://' + document.domain + ':' + location.port);
             var ul = document.getElementById('messages');   // Create element to hold message
             var li = document.createElement("li");
             var user = current_user;                        // Grab the current user 
-            console.log(msg[1]);
-            if(!(msg[1] === user))                          
-                msg[1] = decryptMsg(msg[1]);
+            msg[0] = decryptMsg(msg[0]);                     
+            msg[1] = decryptMsg(msg[1]);
             var input_msg = msg[0] + ":   " + msg[1];
 
             if (msg[0] == 'logged in')                      // If message is a login notification
@@ -118,6 +118,7 @@ function encryptMsg(msg)
         var user = current_user;
         var text = document.getElementById('inputMessage').value;
         var send_msg = [user, text];
+        send_msg[0] = encryptMsg(user);
         send_msg[1] = encryptMsg(text);
         // console.log(text);
         // console.log(send_msg);
