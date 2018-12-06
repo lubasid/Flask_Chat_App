@@ -1,7 +1,7 @@
 h1{color: black;}
 
 body{
-    background-color: #d0d6e0;
+    background-color: #f3f3f3;
     font-family: Arial;
     padding: 50px;
 }
@@ -32,7 +32,7 @@ body{
     border-radius: 0.7rem;
 
     color: rgba(249, 247, 247, 0.7);
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(39, 35, 35, 0.2);
 
     text-decoration: none;
 
@@ -47,6 +47,7 @@ body{
     border:1px solid #ccc; 
     width:100%; 
     margin: 1px auto !important;
+    border-radius: 20px;
 }
 
 .other_client{
@@ -88,10 +89,11 @@ body{
     margin: 1%;
     padding: 10px 10px;
     width:100%;
-    border: 1px solid #ececec;
+    border: 2px solid #777171;
     border-radius: 1px;
     max-height: 70vh;
     min-height: 70vh;
     overflow-y: scroll;
     overflow-x: scroll;
+    border-radius: 20px;
 }

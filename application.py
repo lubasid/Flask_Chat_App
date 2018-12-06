@@ -5,13 +5,8 @@ import socketio
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager,login_user
-
-import sqlite3
-
-from flask_sqlalchemy import SQLAlchemy
 from Database.user_model import User, Role, AdminView, AdminRole
 from flask_admin import Admin
-
 from flask_security import current_user
 
 from flask_security import Security, SQLAlchemyUserDatastore, \
@@ -46,13 +41,16 @@ user_datastore = SQLAlchemyUserDatastore(db, User, Role)
 #Init Flask-Security
 security = Security(application, user_datastore)
 
+# Flask route to the chat home page
+# @login_required: enforces user login
 @application.route('/')
 @login_required
 def index():
    
     return render_template('index.html')
 
-
+# SocketIO event handler which will
+# broadcast message to all clients. 
 @socket.on('message')
 def handleMessage(msg):
 	send(msg, broadcast=True)
@@ -64,5 +62,6 @@ admin = Admin(application)
 admin.add_view(AdminView(User, db.session))
 admin.add_view(AdminRole(Role, db.session))
 
+# Run app on machine Ip address: port 5000
 if __name__ == '__main__':
 	socket.run(application, host='0.0.0.0')
